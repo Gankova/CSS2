@@ -1,0 +1,114 @@
+
+#myid{
+    color: hotpink;
+}
+p#myid{
+
+    color: red;
+}
+.test{
+    color: green;
+}
+
+
+/* Специфичность задается правилом A-B-C-D, где A,B,C,D целые числа от 0 до .......*/
+/*
+D - это кол-во селекторов по псеводоэлементу, псевдоклассу и атрибуту в составном селекторе
+a:hover> p::after a[href]
+D = 3
+
+С - количество селекторов по классу и тегу
+p + div .test >a{}
+C=4
+D=0
+
+B -кол-во селекторов по идентификатору
+#test >p +#test2:hover
+D =1
+C=1
+B = 2
+
+A - наличие в теге атрибута "style"
+A = 1, если есть "style", 
+А =0, если нет"style"
+
+*/
+.test{
+    font-size: 24px;
+}
+.test{
+    font-size: 42px;    
+}
+/*при равенстве спецефичностей приоритет будет отдаваться тому селектору, который расположен последним*/
+
+div{
+    background:yellow !important;
+}
+/* Свойства, влияющие на общий вид ТЕКСТ*/
+div{
+    color: ivory;/*цвет текста*/
+    font-size: 10px;/*размер шрифта*/
+    font-family: 'Arial Narrow', 'Franklin Gothic Medium', Arial, sans-serif;/*тип шрифта */
+    text-align: center;/*положение текста*/
+    text-align: left;
+    text-align: right;
+    text-align: start;
+    text-align: end;
+    text-align: left;
+
+    text-decoration: overline;
+    text-decoration: line-through;
+    text-decoration: underline;
+    text-shadow: 1px 1px 2px black, 0 0 1em red;/* тень текста*/
+    font-weight: 900;/*жирность шрифта 0-900, кратное ста*/
+    letter-spacing: 10px;/*межбуквенный интервал*/
+    line-height: 20px;/*межстрочный интервал*/
+}
+/*Отступы*/
+div{
+    /*внутренние отступы*/
+    padding: 16px;/* 16px справа, слева, сверху и снизу*/
+    padding: 20px 30px;/*20px сверху и снизу, 30px слева и справа*/
+    padding: 10px 20px 30px;/*10px- сверху  20px справа и слева 30 снизу*/
+    padding: 10px 20px 30px 40px;/*по часовой стрелке начиная сверху*/
+    padding-left: 10px;/*только слева*/
+    padding-right: 20px;/*только справа*/
+    padding-top: 30px;/*только сверху*/
+    padding-bottom: 40px;/*только снизу*/
+
+    /*внешние отступы*/
+    margin: 20px;/*тоже что для padding*/
+
+    /*ширина и высота блока*/
+    width: 400px;/*ширина*/
+    height: 120px;/*высота*/
+
+    margin: 0 auto;/*выравнивание по центру*/
+   
+}
+/*красивости*/
+#test2{
+    width: 300px;
+    height: 150px;
+    background: pink url(https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg) no-repeat;
+    background-size: 350px 200px;
+    background-position: center;
+
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 50%;
+
+      
+}
+#test2:hover{
+    border-radius: 0;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    transition: border-radius 1000ms;
+    /*grabient.com - для градиента */
+}
+body{
+    background: #E0E0E0;
+    height: 100%;/*body  на всю высоту*/
+}
+html{
+    height: 100%;
+}
